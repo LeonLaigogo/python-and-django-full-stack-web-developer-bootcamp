@@ -1,0 +1,23 @@
+/* selected tag{
+  property: value;
+} */
+
+h1{
+  color: purple;
+}
+
+/* ol{
+  color: blue;
+} */
+
+li{
+  color: rgb(66, 135, 245);
+}
+
+p{
+  color: #548a25
+}
+
+h4{
+  color: rgba(66, 135, 245, 0.3);
+}
