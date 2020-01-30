@@ -2,32 +2,16 @@
   property: value;
 } */
 
-.firstDiv{
+li{
   color: red;
 }
 
-.secondDiv{
-  color: blue;
-}
-
-#singledout{
-  color: purple;
-  text-decoration: line-through;
-}
-
-*{
-  color: green;
-}
-
-h3 + ul{
-  border: 4px dotted purple;
-}
-
-li a{
-  color: red;
-}
-
-li a[href="www.npr.org"]{
+.topitems{
   color:blue;
-  border: 5px solid orange;
 }
+
+#two{
+  border: 3px solid green;
+}
+
+/* id -> class -> obj */
