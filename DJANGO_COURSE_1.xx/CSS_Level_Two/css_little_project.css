@@ -1,0 +1,35 @@
+h1 {
+  font-family: 'Zhi Mang Xing', cursive;
+  font-size: 48px;
+  text-align: center;
+}
+
+table{
+  margin: auto;
+}
+
+td{
+  width: 300px;
+  height:450px;
+  border: 10px solid white;
+}
+
+#one{
+  background-color: #F2D7EE;
+}
+
+#two{
+  background-color: #D3BCC0;
+}
+
+#three{
+  background-color: #A5668B;
+}
+
+#four{
+  background-color: #69306D;
+}
+
+#five{
+  background-color: #0E103D;
+}
