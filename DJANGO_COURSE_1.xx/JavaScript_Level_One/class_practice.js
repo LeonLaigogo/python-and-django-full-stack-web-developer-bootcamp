@@ -1,10 +1,11 @@
-var hot = false;
-var temp = 20;
+var array = [1, 2, 3]
+var strings = "ababab"
 
-if (temp > 80) {
-  console.log("Hot outside.");
-} else if (temp <= 80 && temp > 50) {
-  console.log("It's not very hot today!");
-} else {
-  console.log("It's pretty cold out.");
+
+for (var i = 0; i < array.length; i++) {
+  console.log(array[i]);
+}
+
+for (var i = 0; i < strings.length; i += 2) {
+  console.log(strings[i]);
 }
