@@ -1,14 +1,14 @@
 // FUNCTION EXERCISES - SOLUTIONS
-
+//
 // Functions are an extremely important part of understanding how to program
 // and they also allow for an ideal way of testing out your general JavaScript
 // knowledge.
-
+//
 // These problem statements are sourced from codingbat.com,
 // a great website to practice your code!
-
+//
 // The problems will gradually get harder and harder.
-
+//
 //
 // PROBLEM 1: SLEEPING IN
 //
@@ -24,11 +24,9 @@
 // sleepIn(false, true) → true
 
 function sleepIn(weekday, vacation) {
-    //Code Goes Here
+    return (!weekday || vacation)
 }
 
-
-//
 // PROBLEM 2: MONKEY TROUBLE
 //
 // We have two monkeys, a and b, and the parameters aSmile and bSmile indicate if
@@ -42,11 +40,9 @@ function sleepIn(weekday, vacation) {
 // monkeyTrouble(true, false) → false
 
 function monkeyTrouble(aSmile, bSmile) {
-    //Code Goes Here
+    return (aSmile === bSmile)
 }
 
-
-//
 // PROBLEM 3: STRING TIMES
 //
 // Given a string and a non-negative int n, return a larger
@@ -59,11 +55,15 @@ function monkeyTrouble(aSmile, bSmile) {
 // stringTimes("Hi", 1) → "Hi"
 
 function stringTimes(str, n) {
-    //Code Goes Here
+    var result = "";
+    for (var i = 0; i < n; i++) {
+      result += str;
+    }
+    return result;
 }
 
 // PROBLEM 4: LUCKY SUM
-
+//
 // Given 3 numerical values, a b c, return their sum. However, if one of the values is
 // 13 then it does not count towards the sum and values to its right do not count.
 // So for example, if b is 13, then both b and c do not count.
@@ -77,8 +77,19 @@ function stringTimes(str, n) {
 // luckySum(1, 13, 3) → 1
 
 function luckySum(a, b, c){
+  var result = 0;
+  var inputList = [a, b ,c];
+  var abandonNum = 13;
 
-  //Code Goes Here
+  for (var i = 0; i < inputList.length; i++) {
+    var num_in_line = inputList[i];
+    if (num_in_line != abandonNum) {
+      result += num_in_line;
+    } else {
+      break;
+    }
+  }
+  return result;
 }
 
 // PROBLEM 5:
@@ -96,7 +107,26 @@ function luckySum(a, b, c){
 // caught_speeding(65, true) → 0
 
 function caught_speeding(speed, is_birthday){
-  //Code Goes Here
+  var speedBonus = 0;
+  var addSpeedBonus = 5;
+
+  if (is_birthday) {
+    speedBonus += addSpeedBonus;
+  }
+
+  var levelOneSpeedLimit = 60 + speedBonus;
+  var levelTwoSpeedLimit = 80 + speedBonus;
+  var noTicket = 0;
+  var smallTicket = 1;
+  var bigTicket = 2;
+
+  if (speed <= levelOneSpeedLimit) {
+    return noTicket;
+  } else if (speed <= levelTwoSpeedLimit) {
+    return smallTicket;
+  } else {
+    return bigTicket;
+  }
 }
 
 
@@ -114,5 +144,20 @@ function caught_speeding(speed, is_birthday){
 // makeBricks(3, 2, 10) → true
 
 function makeBricks(small, big, goal){
-  //Code Goes Here
+  var smallBricks = 1;
+  var bigBricks = 5;
+
+  while (goal > 0 && (small + big) > 0) {
+    if (big > 0 && goal >= bigBricks) {
+      goal -= bigBricks;
+      big -= 1;
+    } else if (big === 0 &&　small > 0 && goal >= smallBricks) {
+      goal -= smallBricks;
+      small -= 1;
+    }
+  }
+
+  return goal === 0
+  // one line solution
+  // return goal % 5 >= 0 && goal % 5 - small <= 0  && small + 5 * big >= goal;
 }
