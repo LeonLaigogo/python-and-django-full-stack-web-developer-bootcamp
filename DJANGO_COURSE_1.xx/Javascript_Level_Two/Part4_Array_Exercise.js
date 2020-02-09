@@ -28,7 +28,7 @@ function display() {
 
 // Now create a while loop that keeps asking for an action (add,remove, display or quit)
 // Use if and else if statements to execute the correct function for each command.
-if(prompt("Would you like start the roster web app? Y/n") == "Y"){
+if(prompt("Would you like start the roster web app? y/n") == "y"){
   var loopAskFlag = true;
   while (loopAskFlag) {
     var action = prompt("Please select an action: add, remove, display or quit.");
