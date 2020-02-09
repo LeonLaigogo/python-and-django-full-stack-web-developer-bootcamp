@@ -1,25 +1,27 @@
-var headOne = document.querySelector("#one")
-var headTwo = document.querySelector("#two")
-var headThree = document.querySelector("#three")
+// 1. create two variables represent restart bottom and // TODO:
+var restart = document.querySelector("#b");
+var table = document.querySelectorAll("td");
 
-console.log("Connected! :D");
+// 2. create restart action and set
+function clearBoard() {
+  for (var i = 0; i < table.length; i++) {
+    table[i].textContent = "";
+  }
+}
 
-headOne.addEventListener("mouseover", function() {
-  headOne.textContent = "Mouse Currently Over";
-  headOne.style.color = "red";
-})
+restart.addEventListener("click", clearBoard);
 
-headOne.addEventListener("mouseout", function() {
-  headOne.textContent = "Hover over me!"
-  headOne.style.color = "black";
-})
+// 3. create td action and set
+function gameDisplayLogic() {
+  if (this.textContent === '') {
+    this.textContent = 'X';
+  } else if (this.textContent === 'X') {
+    this.textContent = 'O';
+  } else {
+    this.textContent = '';
+  }
+}
 
-headTwo.addEventListener("click", function() {
-  headTwo.textContent = "Clicked On!";
-  headTwo.style.color = 'blue';
-})
-
-headThree.addEventListener("dblclick", function() {
-  headThree.textContent = "I was double clicked!"
-  headThree.style.color = 'red';
-})
+for (var i = 0; i < table.length; i++) {
+  table[i].addEventListener('click', gameDisplayLogic);
+}
