@@ -1,28 +1,30 @@
-#####################################
-#### PART 9: FUNCTION EXERCISES #####
-#####################################
-
-
+# ####################################
+# ### PART 9: FUNCTION EXERCISES #####
+# ####################################
+#
+#
 # Complete the tasks below by writing functions! Keep in mind, these can be
 # really tough, its all about breaking the problem down into smaller, logical
 # steps. If you get stuck, don't feel bad about having to peek to the solutions!
-
-#####################
-## -- PROBLEM 1 -- ##
-#####################
-
+#
+# ####################
+# # -- PROBLEM 1 -- ##
+# ####################
+#
 # Given a list of integers, return True if the sequence of numbers 1, 2, 3
 # appears in the list somewhere.
-
+#
 # For example:
-
+#
 # arrayCheck([1, 1, 2, 3, 1]) → True
 # arrayCheck([1, 1, 2, 4, 1]) → False
 # arrayCheck([1, 1, 2, 1, 2, 3]) → True
 
 def arrayCheck(nums):
-    # CODE GOES HERE
-
+    for i in range(len(nums) - 2)
+        if nums[i] == 1 and nums[i+1] == 2 and nums[i+2] == 3:
+            return True
+    return False
 
 #####################
 ## -- PROBLEM 2 -- ##
@@ -30,16 +32,19 @@ def arrayCheck(nums):
 
 # Given a string, return a new string made of every other character starting
 # with the first, so "Hello" yields "Hlo".
-
+#
 # For example:
-
+#
 # stringBits('Hello') → 'Hlo'
 # stringBits('Hi') → 'H'
 # stringBits('Heeololeo') → 'Hello'
 
-def stringBits(str):
-  # CODE GOES HERE
-
+def stringBits(mystring):
+    result = ""
+    for i in range(len(mystring)):
+        if i % 2 == 0:
+            result += mystring[i]
+    return result
 
 #####################
 ## -- PROBLEM 3 -- ##
@@ -59,7 +64,12 @@ def stringBits(str):
 
 
 def end_other(a, b):
-  # CODE GOES HERE
+    lower_a = a.lower()
+    lower_b = a.lower()
+    if len(lower_a) > len(lower_b):
+      return lower_b in lower_a
+    else:
+      return lower_a in lower_b
 
 #####################
 ## -- PROBLEM 4 -- ##
@@ -73,7 +83,10 @@ def end_other(a, b):
 # doubleChar('Hi-There') → 'HHii--TThheerree'
 
 def doubleChar(str):
-  # CODE GOES HERE
+    result = ''
+    for i in str:
+        result += i * 2
+    return result
 
 
 #####################
@@ -81,7 +94,7 @@ def doubleChar(str):
 #####################
 
 # Read this problem statement carefully!
-
+#
 # Given 3 int values, a b c, return their sum. However, if any of the values is a
 # teen -- in the range 13-19 inclusive -- then that value counts as 0, except 15
 # and 16 do not count as a teens. Write a separate helper "def fix_teen(n):"that
@@ -98,9 +111,14 @@ def doubleChar(str):
 # no_teen_sum(2, 1, 14) → 3
 
 def no_teen_sum(a, b, c):
-  # CODE GOES HERE
+    return fix_teen(a) + fix_teen(b) + fix_teen(c)
+
 def fix_teen(n):
-  # CODE GOES HERE
+    if n in [13, 14, 17, 18, 19]:
+        return 0
+    else:
+        return n
+
 
 #####################
 ## -- PROBLEM 6 -- ##
@@ -115,4 +133,4 @@ def fix_teen(n):
 # count_evens([1, 3, 5]) → 0
 
 def count_evens(nums):
-  # CODE GOES HERE
+    return len(list(filter(lambda x: x % 2 == 0, nums)))
